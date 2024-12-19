@@ -89,7 +89,7 @@ public class CombinedSort {
     }
 
 
-    public static int cocktailSortWithCount(int[] arr, int shellIterations) {
+    public static int improvedBushSortWithCount(int[] arr, int shellIterations) {
         int n = arr.length;
         int swapCount = 0;
 
@@ -135,11 +135,11 @@ public class CombinedSort {
             }
         } while (swapped);
 
-        System.out.println(swapCount);
+        //System.out.println(swapCount);
         return swapCount;
     }
 
-    public static int improvedCocktailSortWithCount(int[] arr, int shellIterations) {
+    public static int adaptiveImprovedBushSortWithCount(int[] arr, int shellIterations) {
         int n = arr.length;
         int swapCount = 0;
 
@@ -195,7 +195,7 @@ public class CombinedSort {
 
             start++;
         }
-        System.out.println("Total swaps: " + swapCount);
+        //System.out.println("Total swaps: " + swapCount);
         return swapCount;
     }
 

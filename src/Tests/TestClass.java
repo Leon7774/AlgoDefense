@@ -37,20 +37,25 @@ public class TestClass {
             // Warm-up phase (not included in timing)
             for (int i = 0; i < 5; i++) {
                 int[] warmUpArray = ArrayGenerator.generateRandomizedArray(size);
-                SelectionSort.selectionSort(warmUpArray);
+                //TODO
+                // Kani ilisan, something like InsertionSort.insertionSort(warmupArray), etc
+                CombinedSort.adaptiveImprovedBushSortWithCount(warmUpArray, 4);
             }
 
             totalRuntime = 0;
             for (int i = 0; i < numTrials; i++) {
                 int[] arr = ArrayGenerator.generateRandomizedArray(size);
                 long start = System.nanoTime();
-                SelectionSort.selectionSort(arr);
+                //TODO
+                // 2nd ilisan, something like InsertionSort.insertionSort(arr), etc
+                // If gamiton ang shellsort or bush sort, need sya nga CombinedSort.adaptiveImprovedBushSortWithCount(arr, 4)
+                CombinedSort.adaptiveImprovedBushSortWithCount(arr, 4);
                 long end = System.nanoTime();
                 totalRuntime += end - start;
             }
 
             double averageRuntime = (double) totalRuntime / numTrials;
-            System.out.printf("Average runtime for Selection Sort of size %d: %.2f ms%n", size, averageRuntime/1000);
+            System.out.printf("Average runtime for Combined Sort of size %d: %.2f ms%n", size, averageRuntime/1000);
         }
     }
 

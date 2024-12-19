@@ -136,11 +136,11 @@ public class TestClass {
          */
 
         System.out.println("Cocktail+Shellsort");
-        CodeTimer.timeCodeNoPrint(() -> CombinedSort.cocktailSortWithCount(farr1, 4));
+        CodeTimer.timeCodeNoPrint(() -> CombinedSort.improvedBushSortWithCount(farr1, 4));
 
-        CodeTimer.timeCode(() -> CombinedSort.cocktailSortWithCount(farr2, 4));
-        CodeTimer.timeCode(() -> CombinedSort.cocktailSortWithCount(farr3, 4));
-        CodeTimer.timeCode(() -> CombinedSort.cocktailSortWithCount(farr4, 4));
+        CodeTimer.timeCode(() -> CombinedSort.improvedBushSortWithCount(farr2, 4));
+        CodeTimer.timeCode(() -> CombinedSort.improvedBushSortWithCount(farr3, 4));
+        CodeTimer.timeCode(() -> CombinedSort.improvedBushSortWithCount(farr4, 4));
 
 
         System.out.println("Cocktail Sort");
@@ -158,12 +158,12 @@ public class TestClass {
         CodeTimer.timeCode(() -> CocktailSort.adaptiveCocktailSort(harr4));
 
         System.out.println("Improved Cocktail Sort");
-        CodeTimer.timeCodeNoPrint(() -> CombinedSort.improvedCocktailSortWithCount(iarr1, 4));
+        CodeTimer.timeCodeNoPrint(() -> CombinedSort.adaptiveImprovedBushSortWithCount(iarr1, 4));
 
-        CodeTimer.timeCode(() -> CombinedSort.improvedCocktailSortWithCount(iarr2, 4));
-        CodeTimer.timeCode(() -> CombinedSort.improvedCocktailSortWithCount(iarr3, 4));
-        CodeTimer.timeCode(() -> CombinedSort.improvedCocktailSortWithCount(iarr4, 4));
-        CodeTimer.timeCode(() -> CombinedSort.improvedCocktailSortWithCount(iarr5, 4));
+        CodeTimer.timeCode(() -> CombinedSort.adaptiveImprovedBushSortWithCount(iarr2, 4));
+        CodeTimer.timeCode(() -> CombinedSort.adaptiveImprovedBushSortWithCount(iarr3, 4));
+        CodeTimer.timeCode(() -> CombinedSort.adaptiveImprovedBushSortWithCount(iarr4, 4));
+        CodeTimer.timeCode(() -> CombinedSort.adaptiveImprovedBushSortWithCount(iarr5, 4));
 
     }
 
@@ -235,11 +235,11 @@ public class TestClass {
         CodeTimer.timeCode(() -> SelectionSort.selectionSort(earr4));
 
         System.out.println("Cocktail+Shellsort");
-        CodeTimer.timeCodeNoPrint(() -> CombinedSort.cocktailSortWithCount(farr1, 4));
+        CodeTimer.timeCodeNoPrint(() -> CombinedSort.improvedBushSortWithCount(farr1, 4));
 
-        CodeTimer.timeCode(() -> CombinedSort.cocktailSortWithCount(farr2, 6));
-        CodeTimer.timeCode(() -> CombinedSort.cocktailSortWithCount(farr3, 6));
-        CodeTimer.timeCode(() -> CombinedSort.cocktailSortWithCount(farr4, 6));
+        CodeTimer.timeCode(() -> CombinedSort.improvedBushSortWithCount(farr2, 6));
+        CodeTimer.timeCode(() -> CombinedSort.improvedBushSortWithCount(farr3, 6));
+        CodeTimer.timeCode(() -> CombinedSort.improvedBushSortWithCount(farr4, 6));
 
         System.out.println("Cocktail Sort");
         CodeTimer.timeCodeNoPrint(() -> CocktailSort.cocktailSort(garr1));
