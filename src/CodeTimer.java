@@ -9,7 +9,7 @@ public class CodeTimer {
         long endTime = System.nanoTime(); // End timing
         long duration = endTime - startTime; // Calculate duration
 
-        System.out.println("Execution time: " + duration/1000 + " microseconds");
+        System.out.println("Execution time: " + duration + " nanoseconds");
 
         return duration;
     }

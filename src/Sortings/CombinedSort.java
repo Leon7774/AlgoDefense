@@ -5,6 +5,7 @@ public class CombinedSort {
     public static int[] sort(int[] arr, int shellIterations) {
         int n = arr.length;
 
+        /*
         // Check if the array is already sorted
         boolean alreadySorted = true;
         for (int i = 0; i < n - 1; i++) {
@@ -16,6 +17,8 @@ public class CombinedSort {
         if (alreadySorted) {
             return arr; // Return the sorted array since it is already sorted
         }
+
+         */
 
         // Reduce gap size based on limit and perform sorting
         for (int gap = n / 2; gap > shellIterations; gap /= 2) {
@@ -50,6 +53,40 @@ public class CombinedSort {
          */
 
         return arr;
+    }
+
+
+    public static int sortWithCount(int[] arr, int shellIterations) {
+        int n = arr.length;
+        int swapCount = 0;
+
+        // Reduce gap size based on limit and perform sorting
+        for (int gap = n / 2; gap > shellIterations; gap /= 2) {
+            for (int i = gap; i < n; i++) {
+                int temp = arr[i];
+                int j;
+                for (j = i; j >= gap && arr[j - gap] > temp; j -= gap) {
+                    arr[j] = arr[j - gap];
+                    swapCount++;
+                }
+                arr[j] = temp;
+            }
+        }
+
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // Swap arr[j] and arr[j + 1]
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapCount++;
+                }
+            }
+        }
+
+        System.out.println(swapCount);
+        return swapCount;
     }
 
     public static void shellSort(int[] arr, int limit) {
