@@ -14,9 +14,9 @@ public class TestClass {
 
         System.out.println("\n\n\n\n");
 
-        increasingTest();
+        //increasingTest();
         System.out.println("\n\n\n\n");
-        reverseSortedTest();
+        //reverseSortedTest();
 
 
 
@@ -58,6 +58,7 @@ public class TestClass {
         int[] arr2 = HybridShellQuickSort.generateRandomArray(arraySize);
         int[] arr3 = HybridShellQuickSort.generateRandomArray(arraySize);
         int[] arr4 = HybridShellQuickSort.generateRandomArray(arraySize);
+        int[] arr5 = HybridShellQuickSort.generateRandomArray(arraySize);
 
         int[] barr1 = Arrays.copyOf(arr, arr.length);
         int[] barr2 = Arrays.copyOf(arr2, arr2.length);
@@ -79,24 +80,44 @@ public class TestClass {
         int[] earr3 = Arrays.copyOf(arr3, arr3.length);
         int[] earr4 = Arrays.copyOf(arr4, arr4.length);
 
+        int[] farr1 = Arrays.copyOf(arr, arr.length);
+        int[] farr2 = Arrays.copyOf(arr2, arr2.length);
+        int[] farr3 = Arrays.copyOf(arr3, arr3.length);
+        int[] farr4 = Arrays.copyOf(arr4, arr4.length);
 
+        int[] garr1 = Arrays.copyOf(arr, arr.length);
+        int[] garr2 = Arrays.copyOf(arr2, arr2.length);
+        int[] garr3 = Arrays.copyOf(arr3, arr3.length);
+        int[] garr4 = Arrays.copyOf(arr4, arr4.length);
+
+        int[] harr1 = Arrays.copyOf(arr, arr.length);
+        int[] harr2 = Arrays.copyOf(arr2, arr2.length);
+        int[] harr3 = Arrays.copyOf(arr3, arr3.length);
+        int[] harr4 = Arrays.copyOf(arr4, arr4.length);
+
+        int[] iarr1 = Arrays.copyOf(arr, arr.length);
+        int[] iarr2 = Arrays.copyOf(arr2, arr2.length);
+        int[] iarr3 = Arrays.copyOf(arr3, arr3.length);
+        int[] iarr4 = Arrays.copyOf(arr4, arr4.length);
+        int[] iarr5 = Arrays.copyOf(arr4, arr4.length);
 
         System.out.println("Sortings.BubbleSort");
-        CodeTimer.timeCode(() -> BubbleSort.bubbleSortWithCount(barr1));
+        CodeTimer.timeCodeNoPrint(() -> BubbleSort.bubbleSort(barr1));
         CodeTimer.timeCode(() -> BubbleSort.bubbleSortWithCount(barr2));
-        CodeTimer.timeCode(() -> BubbleSort.bubbleSort(barr3));
+        CodeTimer.timeCode(() -> BubbleSort.bubbleSortWithCount(barr3));
         CodeTimer.timeCode(() -> BubbleSort.bubbleSort(barr4));
         System.out.println("BushSort");
-        //CodeTimer.timeCode(() -> Sortings.BubbleSort.bubbleSort(Sortings.ShellSort.shellSort(arr, 5)));
-        CodeTimer.timeCode(() -> CombinedSort.sortWithCount(carr1, 4));
+        CodeTimer.timeCodeNoPrint(() -> CombinedSort.sortWithCount(carr1, 4));
         CodeTimer.timeCode(() -> CombinedSort.sortWithCount(carr2, 4));
         CodeTimer.timeCode(() -> CombinedSort.sort(carr3, 2));
         CodeTimer.timeCode(() -> CombinedSort.sort(carr4, 2));
         System.out.println("Sortings.ShellSort");
-        CodeTimer.timeCode(() -> ShellSort.shellSortWithCount(arr, 0));
+        CodeTimer.timeCodeNoPrint(() -> ShellSort.shellSort(arr, 0));
         CodeTimer.timeCode(() -> ShellSort.shellSortWithCount(arr2, 0));
-        CodeTimer.timeCode(() -> ShellSort.shellSort(arr3, 0));
+        CodeTimer.timeCode(() -> ShellSort.shellSortWithCount(arr3, 0));
         CodeTimer.timeCode(() -> ShellSort.shellSort(arr4, 0));
+
+        /*
         System.out.println("Sortings.InsertionSort");
         CodeTimer.timeCodeNoPrint(() -> InsertionSort.insertionSort(barr1));
 
@@ -104,12 +125,45 @@ public class TestClass {
         CodeTimer.timeCode(() -> InsertionSort.insertionSort(darr3));
         CodeTimer.timeCode(() -> InsertionSort.insertionSort(darr4));
 
+        /*
         System.out.println("Sortings.SelectionSort");
         CodeTimer.timeCodeNoPrint(() -> SelectionSort.selectionSort(earr1));
 
         CodeTimer.timeCode(() -> SelectionSort.selectionSort(earr2));
         CodeTimer.timeCode(() -> SelectionSort.selectionSort(earr3));
         CodeTimer.timeCode(() -> SelectionSort.selectionSort(earr4));
+
+         */
+
+        System.out.println("Cocktail+Shellsort");
+        CodeTimer.timeCodeNoPrint(() -> CombinedSort.cocktailSortWithCount(farr1, 4));
+
+        CodeTimer.timeCode(() -> CombinedSort.cocktailSortWithCount(farr2, 4));
+        CodeTimer.timeCode(() -> CombinedSort.cocktailSortWithCount(farr3, 4));
+        CodeTimer.timeCode(() -> CombinedSort.cocktailSortWithCount(farr4, 4));
+
+
+        System.out.println("Cocktail Sort");
+        CodeTimer.timeCodeNoPrint(() -> CocktailSort.cocktailSort(garr1));
+
+        CodeTimer.timeCode(() -> CocktailSort.cocktailSort(garr2));
+        CodeTimer.timeCode(() -> CocktailSort.cocktailSort(garr3));
+        CodeTimer.timeCode(() -> CocktailSort.cocktailSort(garr4));
+
+        System.out.println("Adaptive Cocktail Sort");
+        CodeTimer.timeCodeNoPrint(() -> CocktailSort.adaptiveCocktailSort(harr1));
+
+        CodeTimer.timeCode(() -> CocktailSort.adaptiveCocktailSort(harr2));
+        CodeTimer.timeCode(() -> CocktailSort.adaptiveCocktailSort(harr3));
+        CodeTimer.timeCode(() -> CocktailSort.adaptiveCocktailSort(harr4));
+
+        System.out.println("Improved Cocktail Sort");
+        CodeTimer.timeCodeNoPrint(() -> CombinedSort.improvedCocktailSortWithCount(iarr1, 4));
+
+        CodeTimer.timeCode(() -> CombinedSort.improvedCocktailSortWithCount(iarr2, 4));
+        CodeTimer.timeCode(() -> CombinedSort.improvedCocktailSortWithCount(iarr3, 4));
+        CodeTimer.timeCode(() -> CombinedSort.improvedCocktailSortWithCount(iarr4, 4));
+        CodeTimer.timeCode(() -> CombinedSort.improvedCocktailSortWithCount(iarr5, 4));
 
     }
 
@@ -139,6 +193,15 @@ public class TestClass {
         int[] earr3 = Arrays.copyOf(arr3, arr3.length);
         int[] earr4 = Arrays.copyOf(arr4, arr4.length);
 
+        int[] farr1 = Arrays.copyOf(arr, arr.length);
+        int[] farr2 = Arrays.copyOf(arr2, arr2.length);
+        int[] farr3 = Arrays.copyOf(arr3, arr3.length);
+        int[] farr4 = Arrays.copyOf(arr4, arr4.length);
+
+        int[] garr1 = Arrays.copyOf(arr, arr.length);
+        int[] garr2 = Arrays.copyOf(arr2, arr2.length);
+        int[] garr3 = Arrays.copyOf(arr3, arr3.length);
+        int[] garr4 = Arrays.copyOf(arr4, arr4.length);
 
 
         System.out.println("Sortings.BubbleSort");
@@ -148,10 +211,10 @@ public class TestClass {
         CodeTimer.timeCode(() -> BubbleSort.bubbleSort(barr4));
         System.out.println("BushSort");
         //CodeTimer.timeCode(() -> Sortings.BubbleSort.bubbleSort(Sortings.ShellSort.shellSort(arr, 5)));
-        CodeTimer.timeCode(() -> CombinedSort.sort(carr1, 2));
-        CodeTimer.timeCode(() -> CombinedSort.sort(carr2, 2));
-        CodeTimer.timeCode(() -> CombinedSort.sort(carr3, 2));
-        CodeTimer.timeCode(() -> CombinedSort.sort(carr4, 2));
+        CodeTimer.timeCode(() -> CombinedSort.sort(carr1, 6));
+        CodeTimer.timeCode(() -> CombinedSort.sort(carr2, 6));
+        CodeTimer.timeCode(() -> CombinedSort.sort(carr3, 6));
+        CodeTimer.timeCode(() -> CombinedSort.sort(carr4, 6));
         System.out.println("Sortings.ShellSort");
         CodeTimer.timeCode(() -> ShellSort.shellSort(arr, 0));
         CodeTimer.timeCode(() -> ShellSort.shellSort(arr2, 0));
@@ -170,6 +233,21 @@ public class TestClass {
         CodeTimer.timeCode(() -> SelectionSort.selectionSort(earr2));
         CodeTimer.timeCode(() -> SelectionSort.selectionSort(earr3));
         CodeTimer.timeCode(() -> SelectionSort.selectionSort(earr4));
+
+        System.out.println("Cocktail+Shellsort");
+        CodeTimer.timeCodeNoPrint(() -> CombinedSort.cocktailSortWithCount(farr1, 4));
+
+        CodeTimer.timeCode(() -> CombinedSort.cocktailSortWithCount(farr2, 6));
+        CodeTimer.timeCode(() -> CombinedSort.cocktailSortWithCount(farr3, 6));
+        CodeTimer.timeCode(() -> CombinedSort.cocktailSortWithCount(farr4, 6));
+
+        System.out.println("Cocktail Sort");
+        CodeTimer.timeCodeNoPrint(() -> CocktailSort.cocktailSort(garr1));
+
+        CodeTimer.timeCode(() -> CocktailSort.cocktailSort(garr2));
+        CodeTimer.timeCode(() -> CocktailSort.cocktailSort(garr3));
+        CodeTimer.timeCode(() -> CocktailSort.cocktailSort(garr4));
+
     }
 
     public static void reverseSortedTest() {

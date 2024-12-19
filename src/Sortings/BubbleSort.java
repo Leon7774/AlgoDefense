@@ -29,7 +29,7 @@ public static int bubbleSortWithCount(int[] arr) {
             }
         }
     }
-    System.out.println(swapCount);
+    //System.out.println(swapCount);
     return swapCount;
 }
 }

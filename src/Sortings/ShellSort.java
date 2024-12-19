@@ -31,7 +31,7 @@ public class ShellSort {
                 arr[j] = temp;
             }
         }
-        System.out.println(swapCount);
+        //System.out.println(swapCount);
         return swapCount;
     }
 }
