@@ -28,7 +28,7 @@ public class SelectionSort {
         int swapCount = 0;
 
         for (int i = 0; i < n - 1; i++) {
-            // Find the index of the smallest element in the unsorted portion
+            // Find the index of the smallexst element in the unsorted portion
             int minIndex = i;
             for (int j = i + 1; j < n; j++) {
                 if (arr[j] < arr[minIndex]) {

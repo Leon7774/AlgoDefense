@@ -7,6 +7,8 @@ public class ArrayGenerator {
 
     private static final Random random = new Random();
 
+
+
     // Generates a randomized array of given length
     public static int[] generateRandomizedArray(int length) {
         int[] array = new int[length];
@@ -73,10 +75,41 @@ public class ArrayGenerator {
 
     // Test the methods
     public static void main(String[] args) {
-        System.out.println("Randomized Array: " + Arrays.toString(generateRandomizedArray(10)));
-        System.out.println("Highly Dispersed Array: " + Arrays.toString(generateRandomizedHighlyDispersedArray(10)));
-        System.out.println("Lowly Dispersed Array: " + Arrays.toString(generateRandomizedLowlyDispersedArray(10)));
-        System.out.println("Increasing Array: " + Arrays.toString(generateIncreasingArray(10)));
-        System.out.println("Decreasing Array: " + Arrays.toString(generateDecreasingArray(10)));
+        int size = 10; // Size of the array
+        double shufflePercentage = 0.2; // 20% of elements shuffled
+        int[] nearlySortedArray = generateNearlySortedArray(size, shufflePercentage);
+
+        // Print the array
+        for (int num : nearlySortedArray) {
+            System.out.print(num + " ");
+        }
     }
+
+    public static int[] generateNearlySortedArray(int size, double shufflePercentage) {
+        if (size <= 0 || shufflePercentage < 0 || shufflePercentage > 1) {
+            throw new IllegalArgumentException("Invalid size or shuffle percentage");
+        }
+
+        int[] array = new int[size];
+        // Fill the array with sorted elements
+        for (int i = 0; i < size; i++) {
+            array[i] = i + 1;
+        }
+
+        // Shuffle a percentage of the elements
+        int elementsToShuffle = (int) (size * shufflePercentage);
+        Random random = new Random();
+
+        for (int i = 0; i < elementsToShuffle; i++) {
+            int index1 = random.nextInt(size);
+            int index2 = random.nextInt(size);
+            // Swap two elements
+            int temp = array[index1];
+            array[index1] = array[index2];
+            array[index2] = temp;
+        }
+
+        return array;
+    }
+
 }

@@ -5,7 +5,7 @@ import Utils.ArrayGenerator;
 
 public class TestClass {
     public static void main(String[] args) {
-        printAverageRuntime();
+        printAverageSwaps();
     }
 
     public static void printAverageSwaps() {
@@ -13,16 +13,15 @@ public class TestClass {
         int numTrials = 50; // Number of trials to average over
 
         int[] sizes = {10, 100, 1000, 10000, 100000};
-
         for (int size : sizes) {
             totalSwaps = 0;
             for (int i = 0; i < numTrials; i++) {
-                int[] arr = ArrayGenerator.generateRandomizedArray(size);
-                totalSwaps += CocktailSort.cocktailSortWithCount(arr);
+                int[] arr = ArrayGenerator.generateSortedArrayDescending(size);
+                totalSwaps += InsertionSort.insertionSortWithCount(arr);
             }
 
             double averageSwaps = (double) totalSwaps / numTrials;
-            System.out.println("Average swaps for Shell Sort of size " + size + ": " + averageSwaps);
+            System.out.println("Average swaps for Selection Sort of size " + size + ": " + averageSwaps);
         }
     }
 
@@ -36,20 +35,23 @@ public class TestClass {
         for (int size : sizes) {
             // Warm-up phase (not included in timing)
             for (int i = 0; i < 5; i++) {
-                int[] warmUpArray = ArrayGenerator.generateRandomizedArray(size);
+                int[] warmUpArray = ArrayGenerator.generateSortedArrayAscending(size);
                 //TODO
                 // Kani ilisan, something like InsertionSort.insertionSort(warmupArray), etc
-                CombinedSort.adaptiveImprovedBushSortWithCount(warmUpArray, 4);
+                BubbleSort.bubbleSort(warmUpArray);
             }
 
             totalRuntime = 0;
             for (int i = 0; i < numTrials; i++) {
-                int[] arr = ArrayGenerator.generateRandomizedArray(size);
+                //TODO
+                // need sad ilisan ang array generator here, for example if ang high dispersion table ang i fill kay gamiton nimo ang
+                // ArrayGenerator.generateRandomizedHighlyDispersedArray(size)
+                int[] arr = ArrayGenerator.generateSortedArrayAscending(size);
                 long start = System.nanoTime();
                 //TODO
                 // 2nd ilisan, something like InsertionSort.insertionSort(arr), etc
                 // If gamiton ang shellsort or bush sort, need sya nga CombinedSort.adaptiveImprovedBushSortWithCount(arr, 4)
-                CombinedSort.adaptiveImprovedBushSortWithCount(arr, 4);
+                BubbleSort.bubbleSort(arr);
                 long end = System.nanoTime();
                 totalRuntime += end - start;
             }
