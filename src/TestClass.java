@@ -110,28 +110,28 @@ public class TestClass {
         System.out.println("Improved Bush Sort");
         CodeTimer.timeCodeNoPrint(() -> CombinedSort.improvedBushSortWithCount(farr1, 4));
 
-        CodeTimer.timeCode(() -> CombinedSort.improvedBushSortWithCount(farr2, 4));
-        CodeTimer.timeCode(() -> CombinedSort.improvedBushSortWithCount(farr3, 4));
-        CodeTimer.timeCode(() -> CombinedSort.improvedBushSortWithCount(farr4, 4));
+        CodeTimer.timeCode(() -> CombinedSort.improvedBushSort(farr2, 4));
+        CodeTimer.timeCode(() -> CombinedSort.improvedBushSort(farr3, 4));
+        CodeTimer.timeCode(() -> CombinedSort.improvedBushSort(farr4, 4));
 
         System.out.println("BushSort");
         CodeTimer.timeCodeNoPrint(() -> CombinedSort.sortWithCount(carr1, 4));
-        CodeTimer.timeCode(() -> CombinedSort.sortWithCount(carr2, 4));
-        CodeTimer.timeCode(() -> CombinedSort.sort(carr3, 2));
-        CodeTimer.timeCode(() -> CombinedSort.sort(carr4, 2));
+        CodeTimer.timeCode(() -> CombinedSort.sort(carr2, 4));
+        CodeTimer.timeCode(() -> CombinedSort.sort(carr3, 4));
+        CodeTimer.timeCode(() -> CombinedSort.sort(carr4, 4));
 
         System.out.println("BubbleSort");
         CodeTimer.timeCodeNoPrint(() -> BubbleSort.bubbleSort(barr1));
-        CodeTimer.timeCode(() -> BubbleSort.bubbleSortWithCount(barr2));
-        CodeTimer.timeCode(() -> BubbleSort.bubbleSortWithCount(barr3));
+        CodeTimer.timeCode(() -> BubbleSort.bubbleSort(barr2));
+        CodeTimer.timeCode(() -> BubbleSort.bubbleSort(barr3));
         CodeTimer.timeCode(() -> BubbleSort.bubbleSort(barr4));
 
 
 
         System.out.println("Shell Sort");
         CodeTimer.timeCodeNoPrint(() -> ShellSort.shellSort(arr, 0));
-        CodeTimer.timeCode(() -> ShellSort.shellSortWithCount(arr2, 0));
-        CodeTimer.timeCode(() -> ShellSort.shellSortWithCount(arr3, 0));
+        CodeTimer.timeCode(() -> ShellSort.shellSort(arr2, 0));
+        CodeTimer.timeCode(() -> ShellSort.shellSort(arr3, 0));
         CodeTimer.timeCode(() -> ShellSort.shellSort(arr4, 0));
 
         System.out.println("Sortings.InsertionSort");

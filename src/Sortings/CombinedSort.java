@@ -139,6 +139,49 @@ public class CombinedSort {
         return swapCount;
     }
 
+    public static void improvedBushSort(int[] arr, int shellIterations) {
+        int n = arr.length;
+
+        // Reduce gap size based on limit and perform sorting
+        for (int gap = n / 2; gap > shellIterations; gap /= 2) {
+            for (int i = gap; i < n; i++) {
+                int temp = arr[i];
+                int j;
+                for (j = i; j >= gap && arr[j - gap] > temp; j -= gap) {
+                    arr[j] = arr[j - gap];
+                }
+                arr[j] = temp;
+            }
+        }
+
+        boolean swapped;
+        do {
+            swapped = false;
+            for (int i = 0; i < n - 1; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    // Swap arr[i] and arr[i + 1]
+                    int temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                    swapped = true;
+                }
+            }
+
+            if (!swapped) break;
+
+            swapped = false;
+            for (int i = n - 1; i > 0; i--) {
+                if (arr[i] < arr[i - 1]) {
+                    // Swap arr[i] and arr[i - 1]
+                    int temp = arr[i];
+                    arr[i] = arr[i - 1];
+                    arr[i - 1] = temp;
+                    swapped = true;
+                }
+            }
+        } while (swapped);
+    }
+
     public static int adaptiveImprovedBushSortWithCount(int[] arr, int shellIterations) {
         int n = arr.length;
         int swapCount = 0;
