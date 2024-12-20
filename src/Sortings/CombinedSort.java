@@ -200,20 +200,6 @@ public class CombinedSort {
     }
 
 
-    public static void shellSort(int[] arr, int limit) {
-        int n = arr.length;
-        // Reduce gap size based on limit and perform sorting
-        for (int gap = n / 2; gap > limit; gap /= 2) {
-            for (int i = gap; i < n; i++) {
-                int temp = arr[i];
-                int j;
-                for (j = i; j >= gap && arr[j - gap] > temp; j -= gap) {
-                    arr[j] = arr[j - gap];
-                }
-                arr[j] = temp;
-            }
-        }
-    }
 
     public static void bubbleSort(int[] arr) {
         int n = arr.length;
